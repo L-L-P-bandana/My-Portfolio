@@ -1,0 +1,697 @@
+/* ========================================================================== */
+/* General Stuff */
+/* ========================================================================== */
+
+/* ==== CSS Variables ==== */
+
+:root {
+  --primary-color: #4458dc;
+  --primary-color2: #854fee;
+  --title-color: #945656;
+  --text-color: #3a3a3a;
+
+  --gradient-color: linear-gradient(90deg, #273bbc 0%, yellow 100%);
+  --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+}
+
+/* ========================================================================== */
+/* Globals */
+/* ========================================================================== */
+
+/* ==== Elements ==== */
+
+html,
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+.button {
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 0px;
+  color: var(--title-color);
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+main {
+  background-color: whitesmoke;
+}
+
+section {
+  padding: 1px;
+}
+
+/* ==== Classes ==== */
+
+/* ==== Buttons ==== */
+.button {
+  cursor: pointer;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(50%, #273bbc),
+    color-stop(50%, yellow)
+  );
+  background: -webkit-linear-gradient(left, white 50%, #4458dc 50%);
+  background: -o-linear-gradient(left, #4458dc 50%, #4458dc 50%);
+  background: linear-gradient(to right, #4458dc 50%, white 50%);
+  background-size: 200%;
+  background-position: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  margin: 0 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.12rem;
+  width: 25%;
+  text-align: center;
+  -webkit-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  background-clip: text, border-box;
+}
+
+/* Pseudo-element styles for button hover effect */
+.button:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+  -webkit-transition: all 0.5s ease-in-out 0.5s;
+  -o-transition: all 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.button:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  border-bottom: 4px solid #000;
+  border-right: 4px solid #000;
+  -webkit-transition: all 0.5s ease-in-out 0.5s;
+  -o-transition: all 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+/* Button hover styles */
+.button:hover:before,
+.button:hover:after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-position: 0%;
+  -webkit-transition: all 0.5s ease-in-out 0.3s;
+  -o-transition: all 0.5s ease-in-out 0.3s;
+  transition: all 0.5s ease-in-out 0.3s;
+  -webkit-box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Button active styles */
+.button:active {
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  letter-spacing: 0.5rem;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: all 0.05s ease-in-out;
+  -o-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+}
+
+/* Remove focus and active styles for buttons */
+button:focus,
+button:active button:hover .btn:active,
+.btn.active {
+  outline: 0px !important;
+  box-shadow: none !important;
+}
+
+p.generic-paragraph {
+  color: var(--text-color);
+  text-align: left;
+}
+
+.navbar_fixed {
+  position: fixed;
+  width: 100%;
+  top: -1px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: var(--box-shadow);
+  z-index: 999;
+  transition: background 1s ease;
+}
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* ========================================================================== */
+/* Nav */
+/* ========================================================================== */
+
+.header .main-nav .navbar {
+  padding: 1rem 20rem;
+}
+
+.header .main-nav .nav-item .nav-link {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 1.7rem;
+  color: var(--title-color);
+}
+.header .main-nav .navbar-nav .active a {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header .main-nav .navbar-nav a:hover {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header .main-nav .navbar-nav .nav-item {
+  display: flex;
+  justify-content: center;
+}
+.header .main-nav .navbar-brand {
+  display: flex;
+  justify-content: center;
+}
+.header .main-nav .navbar-toggler {
+  margin-right: 1rem;
+  fill: var(--title-color);
+  border-width: 1px;
+  border-color: var(--title-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 3px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: scale(0.9);
+}
+
+/* ========================================================================== */
+/* Banner */
+/* ========================================================================== */
+
+.banner .banner-title h3 {
+  padding-top: 0%;
+  font-weight: 500;
+}
+.banner .banner-title h3::after {
+  content: " ";
+  height: 2px;
+  width: 17vw;
+  background: black;
+  display: inline-block;
+  margin-left: 4%;
+  transform: translateY(-10px);
+}
+.banner .banner-title h1 {
+  font-size: 4rem;
+}
+.banner .banner-title h2 {
+  font-size: 1.7rem;
+}
+
+/* ========================================================================== */
+/* About */
+/* ========================================================================== */
+
+.about {
+  padding: 1em -10rem;
+}
+.about .about-title h3,
+.projects .projects-title {
+  display: block;
+  font: normal bold 40px/ 50px;
+  letter-spacing: 12px;
+}
+.about .about-title .paragraph > p {
+  padding: 0.4rem 0;
+}
+
+/* Makes the main content bounce in on page load */
+.banner .row,
+.about .row,
+.projects,
+.skills {
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+  -webkit-animation: bounceIn 1.5s both 1s;
+  margin-top: 50px;
+}
+.banner .row {
+  margin-top: 200px;
+}
+
+/* Bounce-in animation keyframes */
+@-webkit-keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+/* ========================================================================== */
+/* Projects */
+/* ========================================================================== */
+
+#projects {
+  background-color: white;
+}
+
+.projects {
+  padding: 4rem 4rem;
+}
+
+.projects .the-button-legion button {
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+}
+
+.projects .the-button-legion button + button {
+  padding-left: 2em;
+}
+
+.projects span {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.projects img {
+  border-radius: 2%;
+}
+
+.project-descriptions {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-top: 10px;
+  padding: 0 10px;
+  text-align: justify;
+}
+
+/* ========================================================================== */
+/* Skills */
+/* ========================================================================== */
+
+#skills {
+  background-color: whitesmoke;
+}
+.inner-skills {
+  padding-top: 20px;
+}
+
+.skills-header {
+  text-align: center;
+  color: var(--text-color);
+  padding: 1rem;
+  position: relative;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-gap: 2.5rem;
+  padding: 1rem 80px;
+  padding-top: 60px;
+  font-size: 1.2rem;
+}
+
+.skills-box {
+  padding: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.skill.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.skills-img-border {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  border-radius: 45px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.start-bouncing {
+  animation: bounce 1s ease-in 1;
+}
+
+.skills-img-border:hover {
+  background-color: purple;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.skills-img-border:hover img {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.skills-img {
+  width: 50px;
+  position: relative;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-title h3 {
+  transition: color 0.3s ease;
+}
+
+.skill-title:hover h3 {
+  color: #2ecc71;
+  cursor: pointer;
+}
+
+.skills p {
+  text-align: justify;
+}
+
+/* ========================================================================== */
+/* Footer */
+/* ========================================================================== */
+
+.footer-distributed {
+  background-color: white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3 {
+  color: var(--title-color);
+  font: normal 36px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.footer-distributed h3 span {
+  color: black;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: var(--text-color);
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #6393a6;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #6393a6;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: black;
+  vertical-align: middle;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+  font-size: 1.2rem;
+  font-family: "Oswald" sans-serif;
+}
+
+.footer-distributed .footer-center a {
+  color: black;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: black;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: var(--title-color);
+  letter-spacing: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #6393a6;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* ========================================================================== */
+/* Responsivity */
+/* ========================================================================== */
+
+/* ==== VP 340PX ==== */
+@media only screen and (max-width: 340px) {
+  .banner .banner-title h1 {
+    font-size: 41px;
+  }
+}
+/* ==== VP 792px ==== */
+@media only screen and (max-width: 790px) {
+  .about .about-title h2 > span {
+    font-size: 31px;
+    letter-spacing: 10px;
+  }
+  .projects .the-button-legion button {
+    font-size: 1rem;
+  }
+  .about .about-title p {
+    padding: 0%;
+  }
+}
+/* ==== VP 880px ==== */
+@media (max-width: 880px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
+/* ==== VP 1910PX ==== */
+@media only screen and (max-width: 19010px) {
+  .header .main-nav .navbar {
+    padding: 0rem;
+  }
+  /*.container {
+    max-width: 90%;
+  }*/
+  .about {
+    padding: 3% 4%;
+  }
+  .about .row img {
+    padding-bottom: 50px;
+  }
+
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
